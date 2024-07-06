@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de E-mails</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lista de E-mails Cadastrados</h1>
+      <ul>
+        <% emails.forEach(email => { %>
+        <li>
+          <span><%= email %></span>
+          <form action="/delete" method="POST" style="display: inline">
+            <input type="hidden" name="email" value="<%= email %>" />
+            <button type="submit">Excluir</button>
+          </form>
+        </li>
+        <% }); %>
+      </ul>
+      <div class="footer-links">
+        <a href="/">Voltar</a>
+      </div>
+    </div>
+  </body>
+</html>
